@@ -8,4 +8,8 @@ setup(name='paper_generator',
       author_email='r.dddib.b@gmail.com',
       license='',
       packages=['paper_generator'],
+      install_requires=[
+          're',
+          'pylatex',
+      ],
       zip_safe=False)
