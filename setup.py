@@ -9,7 +9,6 @@ setup(name='paper_generator',
       license='',
       packages=['paper_generator'],
       install_requires=[
-          're',
           'pylatex',
       ],
       zip_safe=False)
