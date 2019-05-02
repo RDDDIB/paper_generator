@@ -1,21 +1,5 @@
 Paper Generator
 ===============
 
-Using This Module
------------------
+Full documentation can be found at :doc:`docs/_build/html/index.html`.
 
-The general usage looks like this:
-
-.. python::
-    report = Report(title='File Title',
-                    author='Your Name',
-                    root='./',
-                    lhead='Date',
-                    chead='Document Title,
-                    rhead='Your Organisation',
-                    count_pos='cfoot',
-                    packages=['required', 'packages'])
-
-    report.new_section('Section Header',
-                       'Section Body')
-    report.auto_generate(clean_tex=False)

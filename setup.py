@@ -7,7 +7,7 @@ def readme():
 
 
 setup(name='paper_generator',
-      version='0.1',
+      version='0.2.1',
       description='A wrapper for pylatex.',
       long_description=readme(),
       url='',

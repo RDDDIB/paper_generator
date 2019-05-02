@@ -176,7 +176,9 @@ class Report:
         """Create a new section.
 
         :param title: The header for the new section.
+        :type title: str
         :param content: The material to display in the new section. (Default value = '')
+        :type content: str
 
         """
         if title in self.sections:
@@ -189,7 +191,9 @@ class Report:
         """Add content to an existing section.
 
         :param title: The title of the section.
+        :type title: str
         :param content: The content to append.
+        :type content: str
 
         """
         if title not in self.sections:
@@ -205,7 +209,9 @@ class Report:
         """Change the position of a section.
 
         :param currentpos: The current position of the section.
+        :type currentpos: int
         :param newpos: The new position of the section.
+        :type currentpos: int
 
         """
         ordering = list(range(len(self.outline)))
@@ -219,6 +225,7 @@ class Report:
         """Reorder the outline.
 
         :param ordering: A list of integers representing the new positions.
+        :type ordering: [int,...]
 
         """
         self.outline = [self.outline[i] for i in ordering]
@@ -235,6 +242,7 @@ class Report:
 
         :param label: The string reference to a glossary item. This must have
                      the appropriate prefix.
+        :type label: str
 
         """
         raise NotImplementedError
@@ -243,6 +251,7 @@ class Report:
         """Replace references in a string with the correct glossary item.
 
         :param content: A string containing references.
+        :type content: str
 
         """
         raise NotImplementedError
@@ -277,6 +286,7 @@ class Report:
         """Generate the PDF.
 
         :param clean_tex: Should the .tex file be deleted after generation? (Default value = True)
+        :type clean_tex: bool
 
         """
         self.doc.generate_pdf('%sreports/%s' % (self.args['root'],
@@ -287,7 +297,9 @@ class Report:
         """Run all the steps necessary for pdf generation.
 
         :param dest: The directory in which to save the pdf.
+        :type dest: str
         :param clean_tex: Should the .tex file be deleted after generation? (Default value = True)
+        :type clean_tex: bool
 
         """
         self.initialize()
