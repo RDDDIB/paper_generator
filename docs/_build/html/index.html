@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Report Documentation &#8212; paper_generator  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="report-documentation">
+<h1>Report Documentation<a class="headerlink" href="#report-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="using-this-module">
+<h2>Using This Module<a class="headerlink" href="#using-this-module" title="Permalink to this headline">¶</a></h2>
+<p>The general usage looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">Report</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;File Title&#39;</span><span class="p">,</span>
+                <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Your Name&#39;</span><span class="p">,</span>
+                <span class="n">root</span><span class="o">=</span><span class="s1">&#39;./&#39;</span><span class="p">,</span>
+                <span class="n">lhead</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span>
+                <span class="n">chead</span><span class="o">=</span><span class="s1">&#39;Document Title&#39;</span><span class="p">,</span>
+                <span class="n">rhead</span><span class="o">=</span><span class="s1">&#39;Your Organisation&#39;</span><span class="p">,</span>
+                <span class="n">count_pos</span><span class="o">=</span><span class="s1">&#39;cfoot&#39;</span><span class="p">,</span>
+                <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">,</span> <span class="s1">&#39;packages&#39;</span><span class="p">])</span>
+
+<span class="n">report</span><span class="o">.</span><span class="n">new_section</span><span class="p">(</span><span class="s1">&#39;Section Header&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;Section Body&#39;</span><span class="p">)</span>
+<span class="n">report</span><span class="o">.</span><span class="n">auto_generate</span><span class="p">(</span><span class="n">clean_tex</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="full-report-class-documentation">
+<h2>Full Report Class Documentation<a class="headerlink" href="#full-report-class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="paper_generator.Report">
+<em class="property">class </em><code class="descclassname">paper_generator.</code><code class="descname">Report</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report" title="Permalink to this definition">¶</a></dt>
+<dd><p>A base class to structure, populate, and generate a PDF document.</p>
+<dl class="method">
+<dt id="paper_generator.Report.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a PDF report.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>author</strong> (<em>str</em>) – The author of the paper.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title of the paper.</p></li>
+<li><p><strong>toc</strong> (<em>bool</em>) – Display table of contents if True.</p></li>
+<li><p><strong>root</strong> (<em>str</em>) – The root directory.</p></li>
+<li><p><strong>glossary_file</strong> (<em>str</em>) – A file containing def/thm/cor/prop/lemma.</p></li>
+<li><p><strong>outline_file</strong> (<em>str</em>) – A file containing the section outline.</p></li>
+<li><p><strong>bib_file</strong> (<em>str</em>) – A file containing a bibliography.</p></li>
+<li><p><strong>refs</strong> (<em>{str: str</em><em>,</em><em>..}</em>) – A dictionary of labels and their associated environments.</p></li>
+<li><p><strong>packages</strong> (<em>[</em><em>str</em><em>,</em><em>..</em><em>]</em>) – Required LaTeX packages.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="paper_generator.Report.__weakref__">
+<code class="descname">__weakref__</code><a class="headerlink" href="#paper_generator.Report.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.add_to_section">
+<code class="descname">add_to_section</code><span class="sig-paren">(</span><em>title</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.add_to_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add content to an existing section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – The title of the section.</p></li>
+<li><p><strong>content</strong> – The content to append.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.auto_generate">
+<code class="descname">auto_generate</code><span class="sig-paren">(</span><em>clean_tex=True</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.auto_generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run all the steps necessary for pdf generation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dest</strong> – The directory in which to save the pdf.</p></li>
+<li><p><strong>clean_tex</strong> – Should the .tex file be deleted after generation? (Default value = True)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.generate">
+<code class="descname">generate</code><span class="sig-paren">(</span><em>clean_tex=True</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.generate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the PDF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>clean_tex</strong> – Should the .tex file be deleted after generation? (Default value = True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.initialize">
+<code class="descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare the LaTeX document.</p>
+<ol class="arabic simple">
+<li><p>Load packages</p></li>
+<li><p>Insert headers and footers</p></li>
+<li><p>Add table of contents</p></li>
+<li><p>Make title</p></li>
+<li><p>Load outline</p></li>
+</ol>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.load_section_from_file">
+<code class="descname">load_section_from_file</code><span class="sig-paren">(</span><em>title</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.load_section_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace the references in a file and create a section containing
+the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em>) – The name of the new section.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – The filename of the file to import.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.move_section">
+<code class="descname">move_section</code><span class="sig-paren">(</span><em>currentpos</em>, <em>newpos</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.move_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the position of a section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>currentpos</strong> – The current position of the section.</p></li>
+<li><p><strong>newpos</strong> – The new position of the section.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.new_section">
+<code class="descname">new_section</code><span class="sig-paren">(</span><em>title</em>, <em>content=''</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.new_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new section.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> – The header for the new section.</p></li>
+<li><p><strong>content</strong> – The material to display in the new section. (Default value = ‘’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="paper_generator.Report.page_break">
+<em class="property">static </em><code class="descname">page_break</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.page_break" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.prepare">
+<code class="descname">prepare</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.prepare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add the created sections to the LaTeX file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.reorder_outline">
+<code class="descname">reorder_outline</code><span class="sig-paren">(</span><em>ordering</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.reorder_outline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reorder the outline.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ordering</strong> – A list of integers representing the new positions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="paper_generator.Report.sections_from_dict">
+<code class="descname">sections_from_dict</code><span class="sig-paren">(</span><em>sections</em><span class="sig-paren">)</span><a class="headerlink" href="#paper_generator.Report.sections_from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create new sections from a given dictionary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sections</strong> (<em>{str: str</em><em>,</em><em>..}</em>) – A dictionary of titles and bodies.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">paper_generator</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Roland Baumann.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
