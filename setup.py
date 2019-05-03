@@ -16,6 +16,11 @@ setup(name='paper_generator',
       license='',
       keywords='latex pylatex pdf generator',
       packages=['paper_generator'],
+      extras_require={
+          'numpy': ["numpy"],
+          'pandas': ["pandas"],
+          'date': ["dateparser"],
+      },
       install_requires=[
           'pylatex',
       ],
