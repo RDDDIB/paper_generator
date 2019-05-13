@@ -74,7 +74,7 @@ class Report:
         """
         if 'fancyhdr' not in self.args['packages']:
             self.args['packages'].append('fancyhdr')
-        if self.args['count_pos'] in self.args['headers']:
+        if self.args.get('count_pos') in self.args['headers']:
             if 'lastpage' not in self.args['packages']:
                 self.args['packages'].append('lastpage')
             msg = r'Page~\thepage\ of~\pageref{LastPage}'
