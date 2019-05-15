@@ -11,7 +11,7 @@ Full documentation will be up soon.
 Requirements
 ------------
 
-* `Python <python.org>`_
+* `Python <http://www.python.org>`_
 
   + (This will also install `pip`.)
 
